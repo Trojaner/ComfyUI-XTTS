@@ -26,7 +26,7 @@ class XTTS_INFER_SRT:
         return {"required":
                     {
                      "text": ("SRT",),
-                     "prompt_audio": ("AUDIOPATH",),
+                     "prompt_audio": ("STRING",),
                      "language": (language_list,{
                          "default": "zh-cn"
                      }),
@@ -65,7 +65,7 @@ class XTTS_INFER_SRT:
     CATEGORY = "AIFSH_XTTS"
     DESCRIPTION = "hello world!"
 
-    RETURN_TYPES = ("AUDIOPATH",)
+    RETURN_TYPES = ("STRING",)
 
     OUTPUT_NODE = False
 
@@ -189,7 +189,7 @@ class XTTS_INFER:
     @classmethod
     def INPUT_TYPES(s):
         return {"required":
-                    {"audio": ("AUDIOPATH",),
+                    {"audio": ("STRING",),
                      "text": ("STRING",{
                          "default": "你好啊！世界",
                          "multiline": True
@@ -229,7 +229,7 @@ class XTTS_INFER:
     CATEGORY = "AIFSH_XTTS"
     DESCRIPTION = "hello world!"
 
-    RETURN_TYPES = ("AUDIOPATH",)
+    RETURN_TYPES = ("STRING",)
 
     OUTPUT_NODE = False
 
@@ -274,7 +274,7 @@ class PreViewAudio:
     @classmethod
     def INPUT_TYPES(s):
         return {"required":
-                    {"audio": ("AUDIOPATH",),}
+                    {"audio": ("STRING",),}
                 }
 
     CATEGORY = "AIFSH_XTTS"
@@ -302,7 +302,7 @@ class LoadAudioPath:
 
     CATEGORY = "AIFSH_XTTS"
 
-    RETURN_TYPES = ("AUDIOPATH",)
+    RETURN_TYPES = ("STRING",)
     FUNCTION = "load_audio"
 
     def load_audio(self, audio):
